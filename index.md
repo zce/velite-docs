@@ -25,7 +25,7 @@ features:
     title: Out of the Box
     details: Turns your Markdown, YAML, JSON, or other files into application data layer.
   - icon: 😍
-    title: Type-Safe Contents
+    title: Type-safe Contents
     details: Content Fields validation based on Zod schema, and auto-generated TypeScript types.
   - icon: 🚀
     title: Light & Efficient

@@ -33,6 +33,10 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
+    editLink: {
+      text: 'Edit this page on GitHub',
+      pattern: 'https://github.com/zce/velite/edit/main/docs/:path',
+    },
     nav: [
       { text: 'Guide', link: '/guide/introduction', activeMatch: '/guide/' },
       { text: 'Config', link: '/config/', activeMatch: '/config/' },
@@ -44,39 +48,39 @@ export default defineConfig({
         base: '/guide/',
         items: [
           {
-            text: 'Introduction',
+            text: 'Getting Started',
             items: [
-              { text: 'Introduction', link: '/introduction' },
-              { text: 'Getting Started', link: '/getting-started' },
-              { text: 'Shared Schemas', link: '/shared-shemas' }
+              { text: 'Introduction', link: 'introduction' },
+              { text: 'Quick Start', link: 'quick-start' },
+              { text: 'Schemas', link: 'shemas' }
             ]
           },
           {
             text: 'Recipes',
             items: [
-              { text: 'MDX Support', link: '/using-mdx' },
-              { text: 'Use with Next.js', link: '/with-nextjs' }
+              { text: 'MDX Support', link: 'using-mdx' },
+              { text: 'Use with Next.js', link: 'with-nextjs' }
             ]
           },
           {
             text: 'Advanced',
             items: [
-              { text: 'Writing a Loader', link: '/writing-loader' },
-              { text: 'Use with Next.js', link: '/shemas' }
+              { text: 'Writing a Loader', link: 'writing-loader' },
+              { text: 'Use with Next.js', link: 'shemas' }
             ]
           },
           {
             text: 'Concepts',
             items: [
-              { text: 'How It Works', link: '/writing-loader' },
-              { text: 'Use with Next.js', link: '/shemas' }
+              { text: 'How It Works', link: 'writing-loader' },
+              { text: 'Motivation', link: 'shemas' }
             ]
           },
           {
             text: 'Roadmap',
             items: [
-              { text: 'How It Works', link: '/writing-loader' },
-              { text: 'Use with Next.js', link: '/shemas' }
+              { text: 'How It Works', link: 'writing-loader' },
+              { text: 'Use with Next.js', link: 'shemas' }
             ]
           }
         ]
@@ -88,7 +92,7 @@ export default defineConfig({
             text: 'References',
             link: '/',
             items: [
-              { text: 'build', link: '/build' }
+              { text: 'build', link: 'build' }
             ]
           }
         ]

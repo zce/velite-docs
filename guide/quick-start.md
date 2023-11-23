@@ -1,13 +1,10 @@
-# Getting Started
-
+# Quick Start
 
 ## Installation
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) version 18 or higher.
-
-VitePress can be used on its own, or be installed into an existing project. In both cases, you can install it with:
+- [Node.js](https://nodejs.org) version 18 or higher, LTS version is recommended.
 
 ::: code-group
 
@@ -29,14 +26,17 @@ $ bun add velite -D
 
 :::
 
-::: details Getting missing peer deps warnings?
+<!-- ::: details Getting missing peer deps warnings?
 If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This does not prevent VitePress from working. If you wish to suppress this warning, add the following to your `package.json`:
-## Quick Start
+::: -->
+
+## Define Contents Schema
 
 Create a `velite.config.js` file in the root directory of your project:
 
-```typescript
+```js
 import { defineConfig, s } from 'velite'
+// s is extended from zod with some custom schemas
 
 export default defineConfig({
   collections: {
@@ -46,9 +46,10 @@ export default defineConfig({
       schema: s
         .object({
           title: s.string().max(99),
-          slug: s.slug('post'),
+          slug: s.slug('posts'),
           date: s.isodate(),
           cover: s.image().optional(),
+          video: s.file().optional(),
           metadata: s.metadata(),
           summary: s.summary(),
           excerpt: s.excerpt(),
@@ -63,7 +64,11 @@ export default defineConfig({
 })
 ```
 
-> Config file supports TypeScript, so you can use the full power of TypeScript to write your config file.
+::: tip
+Config file supports TypeScript & ESM, so you can use the full power of TypeScript to write your config file.
+:::
+
+## Create Contents Files
 
 Add your creative content to the `content` directory, like this:
 
@@ -74,16 +79,35 @@ Add your creative content to the `content` directory, like this:
 +│   │   ├── hello-world.md
 +│   │   └── hello-world-2.md
 +│   └── others
++│       └── other.yml
  ├── public
  ├── package.json
-+└── velite.config.js
+ └── velite.config.js
 ```
+
+## Build Contents by Velite
 
 Run the following command:
 
-```shell
+::: code-group
+
+```sh [npm]
 $ npx velite
 ```
+
+```sh [pnpm]
+$ pnpm velite
+```
+
+```sh [yarn]
+$ yarn velite
+```
+
+```sh [bun]
+$ bun velite
+```
+
+:::
 
 Then you will get the following output:
 
@@ -99,7 +123,31 @@ Then you will get the following output:
  │   └── others
  ├── public
 +│   └── static
-+│       └── xxx.jpg # from content reference
++│       └── img-2hd83d.jpg # from content reference
  ├── package.json
  └── velite.config.js
 ```
+
+## Run Velite with Watch Mode
+
+Run `velite` with `--watch` option, then Velite will watch the contents files and rebuild them automatically when they are changed.
+
+::: code-group
+
+```sh [npm]
+$ npx velite --watch
+```
+
+```sh [pnpm]
+$ pnpm velite --watch
+```
+
+```sh [yarn]
+$ yarn velite --watch
+```
+
+```sh [bun]
+$ bun velite --watch
+```
+
+:::

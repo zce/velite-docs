@@ -1,6 +1,6 @@
-# Shared Schemas
+# Schemas
 
-Velite provides some commonly used schemas.
+Velite has extended Zod schemas, added some commonly used features when building content models.
 
 ## `s.isodate()`
 
