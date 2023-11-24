@@ -27,7 +27,7 @@ Inspired by [Contentlayer](https://contentlayer.dev), based on [Zod](https://zod
 
 - **Easy to use**: Move your contents into `content` folder, define collections config, run `velite` command, and get the data layer.
 - **Type-safe**: Contents schema validation by [Zod](https://zod.dev), and type inference for TypeScript.
-- **Framework Agnostic**: JSON & Entry & DTS Output, out of the box support for React, Vue, Svelte, Solid, etc.
+- **Framework Agnostic**: JSON & Entry & DTS output, out of the box support for React, Vue, Svelte, Solid, etc.
 - **Light-weight**: Choose more native APIs instead of bloated NPM modules, less runtime dependencies, so it is fast and efficiently.
 - **Still powerful**: Built-in Markdown, YAML, JSON support, relative files & images processing, schema validation, etc.
 - **Configurable**: Both input and output directories can be customized, and support for custom loaders, hooks, etc.
@@ -47,3 +47,5 @@ You can try Velite directly in your browser on [StackBlitz](https://stackblitz.c
 - programmability & extensibility
 - schema validation and error reporting friendly
 - etc.
+
+## Why Velite?

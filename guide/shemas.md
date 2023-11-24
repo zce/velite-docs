@@ -352,3 +352,11 @@ interface MarkdownOptions {
   rehypePlugins?: PluggableList
 }
 ```
+
+除此之外，所有 Zod 内置的 Schema 均可以被正常使用，例如：
+
+```ts
+title: s.string().mix(3).max(100)
+```
+
+你可以参考 [Zod](https://zod.dev) 获得完整的支持文档。

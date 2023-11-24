@@ -35,12 +35,16 @@ export default defineConfig({
     },
     editLink: {
       text: 'Edit this page on GitHub',
-      pattern: 'https://github.com/zce/velite/edit/main/docs/:path',
+      pattern: 'https://github.com/zce/velite/edit/main/docs/:path'
+    },
+    socialLinks: [{ icon: 'github', link: 'https://github.com/zce/velite' }],
+    footer: {
+      message: 'Distributed under the MIT License.',
+      copyright: '© 2023 Lei, All rights reserved.'
     },
     nav: [
       { text: 'Guide', link: '/guide/introduction', activeMatch: '/guide/' },
-      { text: 'Config', link: '/config/', activeMatch: '/config/' },
-      { text: 'References', link: '/references/', activeMatch: '/references/' },
+      { text: 'References', link: '/references/config', activeMatch: '/references/' },
       { text: 'Examples', link: '/examples/basic', activeMatch: '/examples/' }
     ],
     sidebar: {
@@ -52,12 +56,17 @@ export default defineConfig({
             items: [
               { text: 'Introduction', link: 'introduction' },
               { text: 'Quick Start', link: 'quick-start' },
-              { text: 'Schemas', link: 'shemas' }
+              { text: 'Schemas', link: 'shemas' },
+              { text: 'CLI Usage', link: 'cli-usage' }
             ]
           },
           {
             text: 'Recipes',
             items: [
+              { text: 'Contexts Access', link: 'contents-access' },
+              { text: 'TypeScript', link: 'using-markdown' },
+              { text: 'Markdown', link: 'using-markdown' },
+              { text: 'Asset Handling', link: 'asset-handling' },
               { text: 'MDX Support', link: 'using-mdx' },
               { text: 'Use with Next.js', link: 'with-nextjs' }
             ]
@@ -65,22 +74,31 @@ export default defineConfig({
           {
             text: 'Advanced',
             items: [
-              { text: 'Writing a Loader', link: 'writing-loader' },
-              { text: 'Use with Next.js', link: 'shemas' }
+              { text: 'Custom Loader', link: 'custom-loader' },
+              { text: 'Fast Refresh', link: 'fast-refresh' }
+            ]
+          },
+          {
+            text: 'Snippets',
+            items: [
+              { text: 'With Next.js', link: 'with-nextjs' },
+              { text: 'MDX Bundle', link: 'mdx-bundle' },
+              { text: 'MDX Render', link: 'mdx-render' }
             ]
           },
           {
             text: 'Concepts',
             items: [
-              { text: 'How It Works', link: 'writing-loader' },
-              { text: 'Motivation', link: 'shemas' }
+              { text: 'How It Works', link: 'how-it-works' },
+              { text: 'Motivation', link: 'motivation' }
             ]
           },
           {
-            text: 'Roadmap',
+            text: 'Others',
+            base: 'others',
             items: [
-              { text: 'How It Works', link: 'writing-loader' },
-              { text: 'Use with Next.js', link: 'shemas' }
+              { text: 'Roadmap', link: 'roadmap' },
+              { text: 'FAQ', link: 'faq' }
             ]
           }
         ]
@@ -91,17 +109,10 @@ export default defineConfig({
           {
             text: 'References',
             link: '/',
-            items: [
-              { text: 'build', link: 'build' }
-            ]
+            items: [{ text: 'Config', link: 'config' }]
           }
         ]
       }
-    },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/zce/velite' }],
-    footer: {
-      message: 'Distributed under the MIT License.',
-      copyright: '© 2023 Lei, All rights reserved.'
     }
   }
 })
